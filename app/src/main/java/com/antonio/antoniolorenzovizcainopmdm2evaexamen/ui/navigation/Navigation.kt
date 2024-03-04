@@ -24,7 +24,7 @@ fun Navigation() {
             Pantalla1() //Nombre de la función composable a la que navegar
         }
         composable(route = Screens.Pantalla2.route) {
-            Pantalla2(viewModel) //Nombre de la función composable a la que navegar
+            Pantalla2(viewModel,navController) //Nombre de la función composable a la que navegar
         }
         composable(route = Screens.Pantalla3.route) {
             Pantalla3() //Nombre de la función composable a la que navegar
