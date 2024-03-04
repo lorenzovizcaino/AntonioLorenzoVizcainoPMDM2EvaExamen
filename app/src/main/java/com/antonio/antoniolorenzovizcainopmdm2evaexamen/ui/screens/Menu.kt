@@ -1,5 +1,10 @@
 package com.antonio.antoniolorenzovizcainopmdm2evaexamen.ui.screens
 
+import android.content.ActivityNotFoundException
+import android.content.Context
+import android.content.Intent
+import android.app.Activity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -22,6 +27,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
+//import androidx.core.content.ContextCompat.startActivity
 import androidx.navigation.NavController
 import com.antonio.antoniolorenzovizcainopmdm2evaexamen.R
 import com.antonio.antoniolorenzovizcainopmdm2evaexamen.ui.miscompose.MyButton
@@ -98,7 +104,9 @@ fun MyTopBar(
                     tint = Color.White
                 )
             }
-            IconButton(onClick = { showToast2("Compartir",context)
+            IconButton(onClick = {
+                showToast2("Compartir",context)
+                //compartir("Contenido para compartir",context)
             }) {
                 Icon(imageVector = Icons.Filled.Share,
                     contentDescription = "Compartir",
@@ -121,4 +129,26 @@ fun MyTopBar(
     )
 }
 
+//fun compartir(content: String, context: Context) {
+//
+//    val sendIntent: Intent = Intent().apply {
+//        action = Intent.ACTION_SEND
+//        putExtra(Intent.EXTRA_TEXT, content)
+//        type = "text/plain"
+//    }
+//
+//    try {
+//
+//        startActivity(sendIntent)
+//    } catch (e: ActivityNotFoundException) {
+//        showToast2("No se puede",context)
+//
+//    }
+//
+//
+//
+////    val shareIntent = Intent.createChooser(sendIntent, null)
+////    // Inicia la actividad de compartir
+////    startActivity(shareIntent)
+//}
 
